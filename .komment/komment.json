@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": "1",
+    "updated_at": "2024-08-12T04:37:58.562Z",
+    "created_at": "2024-08-12T04:37:59.683Z",
+    "pipelines": [
+      "f5478d58-1376-4cfc-821c-38b231c20bc9"
+    ]
+  },
+  "lookup": [
+    [
+      "app/config.py"
+    ]
+  ]
+}

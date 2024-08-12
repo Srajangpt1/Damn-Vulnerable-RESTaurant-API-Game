@@ -1,0 +1,76 @@
+[
+  {
+    "name": "config.py",
+    "path": "app/config.py",
+    "content": {
+      "structured": {
+        "description": "And loads environment variables using the `dotenv` package, generates a random secret key for JWT authentication, and creates a `Settings` class that retrieves configuration values from the environment or provides default values if they are not set. The `Settings` class is then instantiated to provide access to these configuration values.",
+        "items": [
+          {
+            "id": "41f01354-f826-65b5-4b44-ce5f7019efca",
+            "ancestors": [],
+            "description": "Retrieves environment variables and sets default values if not provided, defining various settings such as JWT secret key, PostgreSQL connection details (user, password, server, port, database), and a constructed DATABASE_URL string.",
+            "attributes": [
+              {
+                "name": "JWT_SECRET_KEY",
+                "type_name": "str|bytes",
+                "description": "Generated as a default value when not provided by environment variable `JWT_SECRET_KEY`."
+              },
+              {
+                "name": "CHEF_USERNAME",
+                "type_name": "str",
+                "description": "Assigned a default value of \"chef\" if no environment variable named \"CHEF_USERNAME\" is set."
+              },
+              {
+                "name": "JWT_VERIFY_SIGNATURE",
+                "type_name": "str|None",
+                "description": "Set to the value obtained from the environment variable `JWT_VERIFY_SIGNATURE`. If not present, it defaults to None. This variable likely determines whether or not to verify the signature in JSON Web Tokens (JWTs)."
+              },
+              {
+                "name": "POSTGRES_USER",
+                "type_name": "str",
+                "description": "Set to a default value of \"admin\" if the environment variable \"POSTGRES_USER\" is not provided, otherwise it takes the value of the provided environment variable."
+              },
+              {
+                "name": "POSTGRES_PASSWORD",
+                "type_name": "str",
+                "description": "Set by default to a hardcoded string \"password\". It can be overridden by setting the environment variable `POSTGRES_PASSWORD`."
+              },
+              {
+                "name": "POSTGRES_SERVER",
+                "type_name": "str",
+                "description": "Set to the value of the environment variable `POSTGRES_SERVER`. If this variable is not defined, it defaults to \"localhost\"."
+              },
+              {
+                "name": "POSTGRES_PORT",
+                "type_name": "str",
+                "description": "Used to store the port number for PostgreSQL database connection. It defaults to 5432 if not provided as environment variable."
+              },
+              {
+                "name": "POSTGRES_DB",
+                "type_name": "str",
+                "description": "Assigned a value that is retrieved from an environment variable named \"POSTGRES_DB\". If this variable is not set, it defaults to the string \"restaurant\"."
+              },
+              {
+                "name": "DATABASE_URL",
+                "type_name": "str",
+                "description": "Generated based on environment variables. It represents a PostgreSQL connection string, formatted as \"postgresql://user:password@host:port/dbname\", with default values for user, password, host, port, and database name if environment variables are not provided."
+              }
+            ],
+            "name": "Settings",
+            "location": {
+              "start": 17,
+              "insert": 18,
+              "offset": " ",
+              "indent": 4,
+              "comment": null
+            },
+            "item_type": "class",
+            "length": 12,
+            "docLength": null
+          }
+        ]
+      }
+    }
+  }
+]

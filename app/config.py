@@ -15,6 +15,38 @@ def generate_random_secret():
 
 
 class Settings:
+    """
+    Retrieves environment variables and sets default values if not provided,
+    defining various settings such as JWT secret key, PostgreSQL connection details
+    (user, password, server, port, database), and a constructed DATABASE_URL string.
+
+    Attributes:
+        JWT_SECRET_KEY (str|bytes): Generated as a default value when not provided
+            by environment variable `JWT_SECRET_KEY`.
+        CHEF_USERNAME (str): Assigned a default value of "chef" if no environment
+            variable named "CHEF_USERNAME" is set.
+        JWT_VERIFY_SIGNATURE (str|None): Set to the value obtained from the
+            environment variable `JWT_VERIFY_SIGNATURE`. If not present, it defaults
+            to None. This variable likely determines whether or not to verify the
+            signature in JSON Web Tokens (JWTs).
+        POSTGRES_USER (str): Set to a default value of "admin" if the environment
+            variable "POSTGRES_USER" is not provided, otherwise it takes the value
+            of the provided environment variable.
+        POSTGRES_PASSWORD (str): Set by default to a hardcoded string "password".
+            It can be overridden by setting the environment variable `POSTGRES_PASSWORD`.
+        POSTGRES_SERVER (str): Set to the value of the environment variable
+            `POSTGRES_SERVER`. If this variable is not defined, it defaults to "localhost".
+        POSTGRES_PORT (str): Used to store the port number for PostgreSQL database
+            connection. It defaults to 5432 if not provided as environment variable.
+        POSTGRES_DB (str): Assigned a value that is retrieved from an environment
+            variable named "POSTGRES_DB". If this variable is not set, it defaults
+            to the string "restaurant".
+        DATABASE_URL (str): Generated based on environment variables. It represents
+            a PostgreSQL connection string, formatted as "postgresql://user:password@host:port/dbname",
+            with default values for user, password, host, port, and database name
+            if environment variables are not provided.
+
+    """
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", generate_random_secret())
     CHEF_USERNAME = os.getenv("CHEF_USERNAME", "chef")
 
